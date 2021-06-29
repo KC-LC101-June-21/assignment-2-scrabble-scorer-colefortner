@@ -391,11 +391,13 @@ newPointStructure[(obj[x][i]).toLowerCase()] = Number(x);
 
 }
 //newPointStructure[' '] = 0;
+
+}
+console.log(newPointStructure)
 return newPointStructure
 }
-}
-transform(oldPointStructure);
-
+newPoinStructure = transform(oldPointStructure);
+console.log(newPointStructure)
 
 function initialPrompt() {
    console.log("Let's play some scrabble!")
