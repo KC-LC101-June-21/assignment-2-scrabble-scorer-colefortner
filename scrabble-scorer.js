@@ -391,6 +391,7 @@ newPointStructure[(obj[x][i]).toLowerCase()] = x;
 
 }
 //newPointStructure[' '] = 0;
+return newPointStructure
 }
 }
 transform(oldPointStructure);
