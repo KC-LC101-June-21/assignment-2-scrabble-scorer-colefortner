@@ -387,7 +387,7 @@ function transform(obj) {
 
   for (let x in obj) {
 for (let i = 0; i < obj[x].length; i++) {
-newPointStructure[(obj[x][i]).toLowerCase()] = x;
+newPointStructure[(obj[x][i]).toLowerCase()] = Number(x);
 
 }
 //newPointStructure[' '] = 0;
@@ -510,7 +510,7 @@ scoringFunction: simpleScore
 },
 {name:"Bonus Vowels",
   description:"Vowels are 3 pts, consonants are 1 pt.",
-  scorerFunction: vowelBonusScore
+  scoringFunction: vowelBonusScore
   
 
 },
