@@ -453,14 +453,8 @@ Enter 0,1,2:`);
 return scoringAlgorithm;
 }*/
 //let simpleScore;
-let vowelBonusScore;
-
-const scoringAlgorithms = [
-{
-name:"Simple",
-description: "Each letter is worth 1 point",
-scorerFunction:
-function (word) {
+// let vowelBonusScore;
+function simpleScore(word) {
   
    let letterPoints="";
    simpleScore=0;
@@ -471,13 +465,20 @@ function (word) {
    simpleScore += 1
 
    }
-return simpleScore; 
+   return simpleScore
 }
-},
-{name:"Bonus Vowels",
-  description:"Vowels are 3 pts, consonants are 1 pt.",
-  scorerFunction:function(word)
-  {
+
+function scrabbleScore(word){
+  let total=0;
+for (let i = 0; i < word.length; i++){
+
+total += Number(newPointStructure[word[i]]);
+}
+return total;
+
+}
+
+function vowelBonusScore(word){
   word = word.toUpperCase();
    let letterPoints="";
    let vowel=0;
@@ -498,7 +499,19 @@ return simpleScore;
    }
    }
    vowelBonusScore=vowel+conso;
- return vowelBonusScore;}
+ return vowelBonusScore
+}
+const scoringAlgorithms = [
+{
+name:"Simple",
+description: "Each letter is worth 1 point",
+scorerFunction: simpleScore
+},
+{name:"Bonus Vowels",
+  description:"Vowels are 3 pts, consonants are 1 pt.",
+  scorerFunction: vowelBonusScore
+  
+
 },
  {
    name:"Scrabble",
@@ -521,18 +534,18 @@ word = word.toUpperCase();
    
 	return total;
    }*/
- }
-scorerFunction:function (word) {
-  //word = word.toUpperCase();
-let total=0;
-for (let i = 0; i < word.length; i++){
+ scorerFunction: scrabbleScore
+// scorerFunction:function (word) {
+//   //word = word.toUpperCase();
+// let total=0;
+// for (let i = 0; i < word.length; i++){
 
-total += Number(newPointStructure[word[i]]);
-}
-return total;
-}
+// total += Number(newPointStructure[word[i]]);
+// }
+// return total;
+// }
 
-    }];
+//     }];
 
 /*function getWord() {
 const input = require('readline-sync');
@@ -540,7 +553,7 @@ let word = input.question("WHAT WORD WOULD YOU LIKE TO SCORE?");
 return word.toLowerCase();
 // word = input.toLowerCase();
 }*/
-
+}]
 function runProgram() {
   
    //console.log(oldScrabbleScorer(oldScore))
@@ -606,7 +619,7 @@ return total;
 }*/
 
 
-let scrabbleScore;
+// let scrabbleScore;
 
 let oldScore;
 
