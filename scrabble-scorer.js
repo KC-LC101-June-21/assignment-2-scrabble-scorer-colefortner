@@ -518,8 +518,10 @@ word = word.toUpperCase();
  
 	  }
 	}
+   
 	return total;
    }*/
+ }
 scorerFunction:function (word) {
   //word = word.toUpperCase();
 let total=0;
