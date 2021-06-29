@@ -273,19 +273,29 @@ function vowelBonusScore(word){
 }
 // console.log(`${vowelBonusScore.name}: ${vowelBonusScore.scoringFunction('farting')}`)
 // console.log('helllloooo', vowelBonusScore('farting'))
-let scrabbleScore = {
-  name: 'Scrabble',
-  description: 'The traditional scoring algorithm.',
-  scoringFunction: function(word){
-    word = word.toLowerCase();
+// let scrabbleScore = {
+//   name: 'Scrabble',
+//   description: 'The traditional scoring algorithm.',
+//   scoringFunction: function(word){
+//     word = word.toLowerCase();
+// 	  let score = 0;
+  
+// 	  for (let i = 0; i < word.length; i++) {
+// 			score += newPointStructure[word[i]]
+// 	  }
+// 	  return score
+// 	}
+// }
+function scrabbleScore(word){
+      word = word.toLowerCase();
 	  let score = 0;
   
 	  for (let i = 0; i < word.length; i++) {
 			score += newPointStructure[word[i]]
 	  }
 	  return score
-	}
 }
+
 // console.log(`${scrabbleScore.name}: ${scrabbleScore.scoringFunction('farting')}`)
 
 
@@ -304,7 +314,7 @@ const scoringAlgorithms = [
   {
     name: 'Scrabble',
     description: 'The traditional scoring algorithm',
-    scoringFunction: oldScrabbleScorer
+    scoringFunction: scrabbleScore
   }
 ]
 
